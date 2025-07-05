@@ -1,0 +1,26 @@
+body{
+  background-color: #ccffff;
+}
+table{
+  text-align:center;
+}
+th{
+  font-style:italic;
+}
+button{
+  border: solid 1.5px #666666;
+  border-radius: 2px;
+  color: #000000;
+  font-size: 110%;
+}
+button[disabled]{
+  color:#ff0000;
+}
+marquee{
+  margin:5px auto;
+  padding:1px;
+}
+#main{
+  font-family:sans-serif;
+  letter-spacing:0.33px;
+}

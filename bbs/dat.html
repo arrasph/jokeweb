@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>****</title>
+  </head>
+  <style>
+    body {
+      margin: 10px;
+    }
+    #comments {
+      border: solid 1px;
+      padding: 20px;
+      margin-bottom: 10px;
+      word-break:break-word;
+    }
+    #post {
+      width: 150px;
+    }
+    
+    .name {
+      color: green;
+    }
+    .content{
+      padding-left:20px;
+    }
+    
+    #control{
+      padding:10px;
+      border:solid 1px;
+      border-radius:5px;
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      background-color:white;
+    }
+    #openWrite{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      border:solid 1px;
+      border-radius:50px;
+      font-size:17px
+    }
+    
+    a:visited{
+      color:blue;
+    }
+  </style>
+  <body>
+    <div style="display:none;" id="control">
+      名前:<input id="name" /><br>
+      内容:<input id="post" /><br>
+      <center><button id="sendbtn" onclick="send(this)">書き込む</button></center>
+    </div>
+    <h3 id="theme">
+    </h3>
+    <div id="comments"></div>
+    <button id="openWrite">
+      書き込み
+    </button>
+  </body>
+  <script>
+    const controls=document.getElementById("control")
+    const writeBtn=document.getElementById("openWrite")
+    writeBtn.addEventListener("click",()=>{
+      if(controls.style.display=="none"){
+        controls.style.display=""
+      }
+      else{
+      controls.style.display="none"
+      }
+    })
+  </script>
+  <script src="trip.js"></script>
+  <script src="chatBot.js"></script>
+</html>

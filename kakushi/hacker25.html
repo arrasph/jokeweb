@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>25</title>
+    <meta name="description" content="隠しページ25">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ25
+  </h1>
+<!-- Next Page Hint -->
+  <p>
+    ボタンくん再来です。<br>
+    <button onclick="dice()">押すな押すな押すな押すな</button>
+  </p>
+<!-- here -->
+  </center>
+</body>
+  <script>
+    let i=0;
+    function dice(){
+      i++;
+      const result=Math.floor(Math.random()*6)+1;
+      if(result==1){
+        // 見るな見るな見るな見るな
+        const chars="101,110,116,105,116,121,50,54,46,104,116,109,108".split(",");
+        let res=""
+        chars.forEach(char=>{
+          const str=String.fromCodePoint(char);
+          res+=str;
+        })
+        console.log(res);
+      }
+      if(i>=100){
+        alert("もしかして、見える位置に結果が出ると思ってます？");
+      }
+    }
+  </script>
+</html>

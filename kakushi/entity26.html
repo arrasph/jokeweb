@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>26</title>
+    <meta name="description" content="隠しページ26">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ26
+  </h1>
+  <p>
+    もはやコメントが無くなってきた。。。<br>
+    <button onclick="log()">
+      ボタンだよ～
+    </button>
+  </p>
+  </center>
+</body>
+  <script>
+    let start=false;
+    function log(){
+      const chars="102,105,108,116,101,114,50,55,46,104,116,109,108".split(",");
+        let res=""
+        chars.forEach(char=>{
+          const str=String.fromCodePoint(char);
+          res+=str;
+        })
+        console.error(res);
+      function stream(){
+        for (let i=0; i<500; i++){
+          console.log(Math.random());
+        }
+      }
+      if(!start){
+        start=true;
+        stream();
+        setInterval(stream,2500);
+      }
+    }
+  </script>
+</html>

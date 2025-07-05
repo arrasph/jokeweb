@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>No IA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <span id="anti">Not Detected</span>
+    <script>
+      const original=
+`
+  <head>
+    <title>No IA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <span id="anti">Self Recover</span>
+  </body>
+`
+      const href= location.href
+      if(href.includes("archive")){
+        document.getElementById("anti").textContent=href;
+        function origin(){
+          document.getElementsByTagName("html")[0].innerHTML=original
+        }
+        setInterval(origin,1000)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>11</title>
+    <meta name="description" content="隠しページ11">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ11
+    </h1>
+    <p>
+      URLの法則は撤廃です！<br>
+      <iframe style="border:none;" src="frame12.html">
+      </iframe>
+    </p>
+    kakushi/<input id="url">.html <button onclick="helper()">へ飛ぶ</button>
+  </center>
+</body>
+  <script>
+    function helper(){
+      const url=document.getElementById("url").value;
+      if(url.length!=0) location.href=url+".html";
+    }
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verified</title>
+    <meta name="description" content="Verify your token">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:#000000">
+  <div id="white">
+    <center>
+      <b>Token:<span id="token"></span></b><br>
+      <span style="color:#ff0000">You Verified.</span><br>
+      <span style="color:#ff0000">&lt;- - -&emsp;- - -&gt;</span>
+    </center>
+  </div>
+</body>
+  <script>
+    const tokenBox=document.getElementById("token");
+    const Token=location.href.split("?token=")[1];
+    tokenBox.textContent=Token;
+    setTimeout(()=>{location.href="/"},5000)
+  </script>
+</html>

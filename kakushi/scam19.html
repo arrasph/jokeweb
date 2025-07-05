@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja" oncontextmenu="return false;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>19</title>
+    <meta name="description" content="隠しページ19">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ19
+  </h1>
+    <p>
+      まさか、<span style="background-color:#000000" onclick="scam()">&emsp;&emsp;&emsp;&emsp;</span>がない！騙されたとか思ってませんよね……？<br>
+    </p>
+    <div id="scam" style="display:none;">
+      <big style="color:#ff0000">ご登録ありがとうございました。</big>
+      <table border="1">
+        <tr><th>商品名</th><th>金額(税抜)</th><th>個数</th><th>支払期限</th></tr>
+        <tr><td>Caksy アンチウイルスソフト</td><td>¥327,000</td><td>3個</td><td id="expire"></td></tr>
+      </table>
+      <br>
+      <button onclick="pay()">今すぐ支払う</button>
+    </div>
+  </center>
+</body>
+  <script>
+    function scam(){
+      const dice=Math.floor(Math.random()*6+1);
+      alert("アダルトサイトのアクセスは、あなたのコンピューターに ("+dice+") のウイルスを発見します。");
+      alert("今すぐ処置を行い、始める必要があります。");
+      const date=new Date();
+      const today=date.getFullYear()+"年"+Number(date.getMonth()+1)+"月"+date.getDate()+"日";
+      document.getElementById("expire").textContent=today;
+      document.getElementById("scam").style.display="";
+    }
+    function pay(){
+      alert("ご登録ありがとうございました。\nお支払いは正常に完了しました。");
+      location.href="mirror20.html"
+    }
+  </script>
+</html>

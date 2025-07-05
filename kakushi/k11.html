@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>11</title>
+    <meta name="description" content="隠しページ11">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ11
+    </h1>
+    <p>
+      あーあ、言ったそばから…。<br>元のページへお戻りください。<br>
+    </p>
+    <button onclick="back()">
+      戻る
+    </button>
+  </center>
+</body>
+  <script>
+    function back(){
+      if(location.search=="?r=10"){
+        location.href="mebuki11.html";
+      }
+      else{
+        history.back();
+      }
+    }
+  </script>
+</html>

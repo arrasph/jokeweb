@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Connection</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1 style="font-family:sans">
+    新しい接続を検知しました
+    </h1>
+    <hr>
+    <button onclick="log(this)">
+        クリックして認証する
+      </button>
+    <div id="window" style="display:none;">
+    <div style="display:flex; margin-top:10px; padding: 1px 10px; text-align:left; font-size:50%; color:#ffffff; background-color:#3e6fed;">
+      cmd.exe
+      <div style="margin-left:auto; display:flex">
+        <div style="text-align:center; width:auto; padding:0px 1px; margin-right:5px; border:1px solid #ffffff;">
+          &nbsp;_&nbsp;
+        </div>
+        <div style="text-align:center; width:auto; padding:0px 1px; margin-right:5px; border:1px solid #ffffff;">
+          □
+        </div>
+        <div style="text-align:center; width:auto; padding:0px 1px; margin-right:1px; background-color:#ff0000;">
+          ×
+        </div>
+      </div>
+    </div>
+    <div id="log" style="background-color:#000000; color:#ffffff; text-align:left; padding:3px 10px;">
+   loading
+      </div>
+      
+    </div>
+  </center>
+</body>
+  <script>
+    let logs=0;
+    let token="";
+    function log(elem){
+      elem.disabled=true;
+      elem.textContent="認証中…";
+    const logBox=document.getElementById("log");
+      document.getElementById("window").style.display="";
+      function loading(){
+        logBox.innerHTML+=".";
+        setTimeout(newLog(),500);
+      }
+    function newLog(){
+      if(logs<5){
+        setTimeout(loading,1000);
+        logs++;
+      }
+      else if(logs<15){
+      const random=Math.floor(Math.random()*100000000).toString(16);
+      logBox.innerHTML+="<br>Windows/sys/" + random+" > success";
+        setTimeout(newLog,Math.random()*1000+10);
+        logs++;
+      }
+      else if(logs==15){
+        const random=Math.floor(Math.random()*100000000).toString(16);
+        logBox.innerHTML+="<br>Verified. Token=" + random;
+        token=random;
+        setTimeout(newLog,Math.random()*1000+500);
+        logs++;
+      }
+      else{
+        alert("認証が完了しました");
+        setTimeout(()=>{location.href="verify.html?token="+token;},1000);
+      }
+    }
+    setTimeout(newLog,300);
+      
+    }
+  </script>
+</html>

@@ -1,0 +1,23 @@
+body{
+  font-family:sans-serif;
+  background-color: #ffff99;
+  color:#000000;
+}
+button{
+  border: solid 1px #666666;
+  border-radius: 2px;
+  color: #000000;
+  font-size:100%;
+  cursor: pointer;
+}
+a:visited{
+  color:blue;
+}
+a.hidden-link{
+  color:#000000;
+  text-decoration: none;
+  cursor:text;
+}
+a.noid{
+  color:#3232cd;
+}

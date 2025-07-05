@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>threader</title>
+    <meta name="description" content="新規スレッド">
+</head>
+<body>
+  新規スレッドを立てる
+  <input id="thread">
+  <button onclick="make()">
+    確定
+  </button>
+  <script>
+    function make(){
+      const thName=document.getElementById("thread").value
+      location.href="dat.html?i="+thName+"&t="+thName+"&f=1"
+    }
+  </script>
+</body>
+</html>

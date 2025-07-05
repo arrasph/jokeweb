@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>22</title>
+    <meta name="description" content="隠しページ22">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ22
+  </h1>
+  <p><br><br><br><br><br><br><br><br><br><br><br>
+    <button onclick="next()" id="pop" style="position:fixed">次へ進む</button>
+  </p>
+  </center>
+</body>
+  <script>
+    const pop=document.getElementById("pop");
+    let pos=[0,0];
+    function movePop(){
+      const base=Math.floor(Math.random()*80)+20;
+      const rdX=Math.floor(Math.random()*(base+1))-(base/2);
+      const rdY=Math.floor(Math.random()*(base+1))-(base/2);
+      const newX=pos[0]+rdX;
+      const newY=pos[1]+rdY;
+      if(newX**2>=50000){
+        newX-=pos[0]-rdX
+      }
+      if(newY**2>=60000){
+        newY-=pos[1]-rdY
+      }
+      pos[0]=newX;
+      pos[1]=newY;
+      pop.style.transform = "translateX("+newX+"px) translateY("+newY+"px)";
+    }
+    function next(){
+      location.href="force23.html";
+    }
+    setInterval(movePop,25);
+  </script>
+</html>

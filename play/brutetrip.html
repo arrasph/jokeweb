@@ -1,0 +1,52 @@
+<html>
+  <title>TripBrute</title>
+  <body>
+    <style>
+      body{
+        font-family: "MS Gothic", monospace;
+      }
+    </style>
+  <div id="c">count:</div>
+  <div id="xd"></div>
+  <script src="/bbs/trip.js"></script>
+  <script>
+    let counter = 2500000;
+    let seed=1;
+    if(localStorage.session){
+      let ses=localStorage.session
+      if(Number(ses) && localStorage.seed==seed)
+      counter=ses
+    }
+    function gen() {
+      counter++;
+      const code = counter.toString(36);
+      const res = getCode(code);
+      document.getElementById("c").textContent = counter+" #"+code+" ◆"+res;
+      if(res.match(/(.)(.)(.)(.)(.)\5\4\3\2\1/)||
+         res.match(/(.)(.)(.)(.)(.)\1\2\3\4\5/)||
+         res.match(/(.)(.)(\1\2){4,}/)||
+         res.match(/(.)\1{6,}/)||
+         res.match(/^(defq|fade|force|spectr|i1ljj)/)
+        ){
+      document.getElementById("xd").innerHTML +=
+          "◆" + res + " #" + code + " ["+counter+"]<br>";
+      }
+      if(counter%1000==0){
+        localStorage.session=counter;
+        localStorage.seed=seed;
+      }
+    }
+    setInterval(()=>{
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+      gen();gen();gen();gen();gen();gen();gen();gen();
+    },5)
+    //4px65, bjwg0, rvq4i43, 23chwm2
+  </script>
+  </body>
+</html>

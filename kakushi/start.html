@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>入口</title>
+    <meta name="description" content="隠しページに挑戦">
+    <link rel="stylesheet" href="/kakushi/style.css">
+</head>
+<body>
+  <p>
+    本当にいいんですか？もう戻れませんよ。<br>
+    <a href="k1.html">スタート</a>&emsp;
+    <button onclick="start()">スタート</button>
+  </p>
+  <a href="/tips.html">ヒントを見る</a><br>
+  <a href="/">戻る</a>
+</body>
+  <script>
+    let i=0;
+  function start(){
+    alert("ボタンを押すな！！");
+    i++;
+    if(i>1){
+      alert("罰が当たりました");
+      if(i>4){
+        alert("反省してください。");
+        location.href="/";
+      }
+      if(!window.confirm("反省しますか？")){
+        location.href="/";
+      }
+      else{
+        alert("仕方ない。");
+      }
+    }
+  }
+  </script>
+</html>

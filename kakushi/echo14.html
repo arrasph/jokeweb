@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" style="cursor:progress">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>14</title>
+    <meta name="description" content="隠しページ14">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ14
+  </h1>
+  <p>
+    画像を読み込んでいます…<br>
+    <img src="/" border="1" style="padding:50px"><br>
+    <b><span id="msg" style="color:#0000ff"></span></b>
+  </p>
+  </center>
+</body>
+  <script>
+    function tips(){
+      alert("cell15.html");
+      document.getElementsByTagName("html")[0].style.cursor="default";
+      document.getElementById("msg").textContent="↑待っても出てこないよ！"
+    }
+    setTimeout(tips,20000);
+  </script>
+</html>

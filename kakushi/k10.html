@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>10</title>
+    <meta name="description" content="隠しページ10">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ10
+    </h1>
+    <p style="color:#ff0000">
+      まさか、ここまで「k(数字).html」を書き換えてやってきた人は居ませんよね？<br>
+      「<span onclick="next()">kakushi/k11.html</span>」みたいに。
+    </p>
+  </center>
+</body>
+  <script>
+    let i=0;
+    function next(){
+      i++;
+      if(i>3){
+        location.href="k11.html?r=10"
+      }
+    }
+  
+  </script>
+</html>

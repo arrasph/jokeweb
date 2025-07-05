@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" oncontextmenu="return false;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>18</title>
+    <meta name="description" content="隠しページ18">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+  <h1>
+    ステージ18
+  </h1>
+    <p>
+    長文の次は短文にしてみました。短文どころじゃないけど。<br>
+      ちなみに、<a href="cheat20.html">ステージ20</a>まではソース見なくてもいけるんじゃないかな？<br><hr>
+    広告<br>
+      <button onclick="age()">【無料】厳選極秘画像【R18】</button>
+    </p>
+  </center>
+</body>
+  <script>
+    function age(){
+      if(document.cookie.includes("age=limited")){
+        alert("18歳未満はご利用いただけません。");
+        return
+      }
+      alert("ここから先は年齢制限があります。");
+      if(confirm("あなたは18歳以上ですか？")){
+        alert("転送中……");
+        location.href="scam19.html"
+      }
+      else{
+        alert("18歳未満のご利用を固く禁じます。");
+        document.cookie+="age=limited;"
+      }
+    }
+  </script>
+</html>

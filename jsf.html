@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+  </head>
+  <body onclick="let a=1">
+    <style>
+      textarea{
+        width: 360px;
+        height: 100px;
+        margin-bottom:5px
+      }
+      button{
+        font-size:125%;
+        margin:5px;
+      }
+    </style>
+    <span id="res"></span><br>
+    <textarea id="code"></textarea><br>
+    <button onclick="run()">
+      RUN JSFUCK
+    </button><br>
+    <button id="exc" class="key">!</button>
+    <button id="parS" class="key">(</button>
+    <button id="parE" class="key">)</button>
+    <button id="cur" class="key">[]</button>
+    <button id="curS" class="key">[</button>
+    <button id="curE" class="key">]</button>
+    <button id="plus" class="key">+</button><br>
+    <button onclick="bcs()">BACK SPACE</button><br>
+    <button onclick="del()">DELETE</button>
+  </body>
+  
+  <script>
+    function run(){
+      let result
+      try{
+        result=eval(document.getElementById("code").value)
+      }
+      catch(e){
+        result=e
+      }
+      document.getElementById("res").textContent=result
+    }
+    const keys=document.getElementsByClassName("key")
+    Array.from(keys).forEach(keyElem=>{
+      keyElem.addEventListener("click",()=>{
+        document.getElementById("code").value+=keyElem.textContent
+      })
+    })
+    const codeBox=document.getElementById("code")
+    function del(){
+      codeBox.value=""
+    }
+    function bcs(){
+      codeBox.value=codeBox.value.slice(0,-1)
+    }
+  </script>
+</html>
