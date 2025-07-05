@@ -2,7 +2,7 @@ function dontpush(elem){
   alert("押すな！");
   elem.textContent="押しちゃいましたね。。。"
   elem.disabled=true;
-  const dangerLink='<a href="/danger/check.html" style="font-size:3px">？？？</a>'
+  const dangerLink='<a href="danger/check.html" style="font-size:3px">？？？</a>'
   document.getElementById("danger").innerHTML+=dangerLink;
 }
 function today(){
